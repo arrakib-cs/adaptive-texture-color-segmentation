@@ -72,13 +72,6 @@ htmlcov/
 .env.*
 *.env
 
-# =========================================================
-# Large generated outputs
-# =========================================================
-
-data/output/*
-!data/output/examples/
-!data/output/examples/**
 
 # =========================================================
 # Models / checkpoints if added later
