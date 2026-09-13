@@ -62,30 +62,32 @@ The framework can sweep different values of **K** to visualize how segmentation 
 
 ## Core Idea
 
-AdaptiveSeg represents each image pixel with a compact texture–color feature vector:
+## Core Idea
 
-\[
+AdaptiveSeg represents each image pixel with a compact **texture–color feature vector**:
+
+$$
 \mathbf{x}_i =
-[
-w_tT_i,\;
-w_hH_i,\;
-w_sS_i,\;
-w_vV_i
-]
-\]
+\left[
+w_t T_i,\;
+w_h H_i,\;
+w_s S_i,\;
+w_v V_i
+\right]
+$$
 
 where:
 
-- \(T_i\) is the normalized LBP texture value
-- \(H_i\) is hue
-- \(S_i\) is saturation
-- \(V_i\) is brightness/value
-- \(w_t, w_h, w_s, w_v\) control feature importance
+- $T_i$ is the normalized **LBP texture value**
+- $H_i$ is the **Hue** component
+- $S_i$ is the **Saturation** component
+- $V_i$ is the **Brightness / Value** component
+- $w_t$, $w_h$, $w_s$, and $w_v$ control the relative importance of each feature
 
-The project then explores two main segmentation strategies:
+The project then explores two primary segmentation strategies:
 
-1. **K-Means segmentation** — groups pixels in feature space without explicitly enforcing spatial connectivity.
-2. **Adaptive region growing** — begins from automatically selected seeds and expands spatially connected regions according to local texture–color similarity.
+1. **K-Means Segmentation** — groups pixels according to similarity in the fused feature space without explicitly enforcing spatial connectivity.
+2. **Adaptive Region Growing** — begins from automatically selected seed points and expands spatially connected regions according to local texture–color similarity.
 
 ---
 
